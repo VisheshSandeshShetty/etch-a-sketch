@@ -1,9 +1,13 @@
 const container=document.querySelector('#container');
 const screen=document.querySelector('.sketch-screen');
 
-for(let i=0;i<256;i++){
+let n=prompt("Enter number of squares per side: ", "16");
+
+for(let i=0;i<(n*n);i++){
     const pad=document.createElement('div');
     pad.classList.add("pad");
+    pad.style.width=`${512/n}px`;
+    pad.style.height=`${512/n}px`;
     screen.appendChild(pad);
     
     pad.addEventListener('mouseover', ()=>{
